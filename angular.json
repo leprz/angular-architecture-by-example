@@ -13,7 +13,14 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets",
+              {
+                "glob": "**/*",
+                "input": "libs/web/todo/common/assets/src",
+                "output": "assets"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -69,7 +76,10 @@
             "polyfills": "apps/web/todo/src/polyfills.ts",
             "tsConfig": "apps/web/todo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/web/todo/src/favicon.ico", "apps/web/todo/src/assets"],
+            "assets": [
+              "apps/web/todo/src/favicon.ico",
+              "apps/web/todo/src/assets"
+            ],
             "styles": ["apps/web/todo/src/styles.scss"],
             "scripts": []
           },
@@ -206,6 +216,32 @@
       },
       "tags": [],
       "implicitDependencies": ["todo"]
+    },
+    "web-todo-common-assets": {
+      "projectType": "library",
+      "root": "libs/web/todo/common/assets",
+      "sourceRoot": "libs/web/todo/common/assets/src",
+      "prefix": "todo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/todo/common/assets"],
+          "options": {
+            "jestConfig": "libs/web/todo/common/assets/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/todo/common/assets/src/**/*.ts",
+              "libs/web/todo/common/assets/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }
