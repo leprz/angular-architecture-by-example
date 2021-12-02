@@ -16,9 +16,15 @@
     "baseUrl": ".",
     "paths": {
       "@todo/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@todo/web/todo/common/assets": [
-        "libs/web/todo/common/assets/src/index.ts"
-      ]
+      "@todo/web/common": ["libs/web/common/src/index.ts"],
+      "@todo/web/todo/board/basic": ["libs/web/todo/board/basic/src/index.ts"],
+      "@todo/web/todo/board/common": [
+        "libs/web/todo/board/common/src/index.ts"
+      ],
+      "@todo/web/todo/board/kanban": [
+        "libs/web/todo/board/kanban/src/index.ts"
+      ],
+      "@todo/web/todo/common": ["libs/web/todo/common/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

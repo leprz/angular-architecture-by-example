@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'web-todo-common-assets',
+  displayName: 'web-todo-board-basic',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../../coverage/libs/web/todo/common/assets',
+  coverageDirectory: '../../../../../coverage/libs/web/todo/board/basic',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

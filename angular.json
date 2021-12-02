@@ -78,7 +78,11 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/web/todo/src/favicon.ico",
-              "apps/web/todo/src/assets"
+              {
+                "glob": "**/*",
+                "input": "libs/web/common/src/lib/assets",
+                "output": "assets"
+              }
             ],
             "styles": ["apps/web/todo/src/styles.scss"],
             "scripts": []
@@ -217,17 +221,17 @@
       "tags": [],
       "implicitDependencies": ["todo"]
     },
-    "web-todo-common-assets": {
+    "web-common": {
       "projectType": "library",
-      "root": "libs/web/todo/common/assets",
-      "sourceRoot": "libs/web/todo/common/assets/src",
+      "root": "libs/web/common",
+      "sourceRoot": "libs/web/common/src",
       "prefix": "todo",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/todo/common/assets"],
+          "outputs": ["coverage/libs/web/common"],
           "options": {
-            "jestConfig": "libs/web/todo/common/assets/jest.config.js",
+            "jestConfig": "libs/web/common/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -235,8 +239,112 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/web/todo/common/assets/src/**/*.ts",
-              "libs/web/todo/common/assets/src/**/*.html"
+              "libs/web/common/src/**/*.ts",
+              "libs/web/common/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "web-todo-board-basic": {
+      "projectType": "library",
+      "root": "libs/web/todo/board/basic",
+      "sourceRoot": "libs/web/todo/board/basic/src",
+      "prefix": "todo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/todo/board/basic"],
+          "options": {
+            "jestConfig": "libs/web/todo/board/basic/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/todo/board/basic/src/**/*.ts",
+              "libs/web/todo/board/basic/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "web-todo-board-common": {
+      "projectType": "library",
+      "root": "libs/web/todo/board/common",
+      "sourceRoot": "libs/web/todo/board/common/src",
+      "prefix": "todo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/todo/board/common"],
+          "options": {
+            "jestConfig": "libs/web/todo/board/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/todo/board/common/src/**/*.ts",
+              "libs/web/todo/board/common/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "web-todo-board-kanban": {
+      "projectType": "library",
+      "root": "libs/web/todo/board/kanban",
+      "sourceRoot": "libs/web/todo/board/kanban/src",
+      "prefix": "todo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/todo/board/kanban"],
+          "options": {
+            "jestConfig": "libs/web/todo/board/kanban/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/todo/board/kanban/src/**/*.ts",
+              "libs/web/todo/board/kanban/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "web-todo-common": {
+      "projectType": "library",
+      "root": "libs/web/todo/common",
+      "sourceRoot": "libs/web/todo/common/src",
+      "prefix": "todo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/todo/common"],
+          "options": {
+            "jestConfig": "libs/web/todo/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/todo/common/src/**/*.ts",
+              "libs/web/todo/common/src/**/*.html"
             ]
           }
         }
