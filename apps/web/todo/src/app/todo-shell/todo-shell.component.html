@@ -1,7 +1,8 @@
 <div class="container">
+  <h2>Todo shell</h2>
   <nav>
-    <a routerLink="/" routerLinkActive="active">Kanban</a>
-    <a routerLink="/basic" routerLinkActive="active">Basic</a>
+    <a [routerLink]="'/' + todoRoutes.kanban.path" routerLinkActive="active">Kanban</a>
+    <a [routerLink]="'/' + todoRoutes.basic.path" routerLinkActive="active">Basic</a>
   </nav>
   <router-outlet></router-outlet>
 </div>

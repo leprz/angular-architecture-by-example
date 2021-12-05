@@ -3,7 +3,5 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [
-  ],
 })
-export class WebTodoBoardCommonModule {}
+export class WebTodoSharedModule {}

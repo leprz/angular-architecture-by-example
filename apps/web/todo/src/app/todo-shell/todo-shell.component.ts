@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoRouteResolverInterface } from "@todo/web/todo/shared";
 
 @Component({
   selector: 'todo-todo-shell',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoShellComponent implements OnInit {
 
-  constructor() { }
+  constructor(readonly todoRoutes: TodoRouteResolverInterface) { }
 
   ngOnInit(): void {
   }

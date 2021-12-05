@@ -350,6 +350,32 @@
         }
       },
       "tags": []
+    },
+    "web-todo-shared": {
+      "projectType": "library",
+      "root": "libs/web/todo/shared",
+      "sourceRoot": "libs/web/todo/shared/src",
+      "prefix": "todo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/todo/shared"],
+          "options": {
+            "jestConfig": "libs/web/todo/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/todo/shared/src/**/*.ts",
+              "libs/web/todo/shared/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }
